@@ -1,5 +1,6 @@
 import React from "react";
 import Pokedex from "./Pokedex";
+import Footer from "./Footer";
 
 function App() {
 	return (
@@ -8,6 +9,7 @@ function App() {
 				<h1>Pokedex</h1>
 				<Pokedex />
 			</header>
+			<Footer />
 		</div>
 	);
 }
