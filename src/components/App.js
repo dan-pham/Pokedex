@@ -1,12 +1,12 @@
 import React from "react";
-import Pokecard from "./Pokecard";
+import Pokedex from "./Pokedex";
 
 function App() {
 	return (
 		<div className="App">
 			<header className="Pokedex">
-				<h1>Welcome to the Pokedex!</h1>
-				<Pokecard />
+				<h1>Pokedex</h1>
+				<Pokedex />
 			</header>
 		</div>
 	);
