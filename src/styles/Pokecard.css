@@ -1,6 +1,5 @@
 body {
 	font-family: "Press Start 2P", sans-serif;
-	color: white;
 }
 
 .pokecard {
@@ -28,8 +27,10 @@ body {
 .pokecard h2 {
 	font-size: 1.2em;
 	margin: 5px 0;
+	color: white;
 }
 
 .pokecard p {
 	margin: 5px 0;
+	color: white;
 }
