@@ -25,6 +25,9 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 				</span>
 			</h3>
 			<Pokedex pokemon={hand2} />
+			<div style={{ fontSize: "1.2em", color: isWinner ? "green" : "red" }}>
+				{isWinner ? "You win!" : "You lose"}
+			</div>
 			<h3>
 				Your Hand
 				<span style={{ fontSize: "0.8em", marginLeft: "10px" }}>
