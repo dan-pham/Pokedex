@@ -18,6 +18,7 @@ const Pokedex = ({ pokemon }) => {
 	);
 };
 
+/* For the first step in the Pokedex, using Pokedex.defaultProps to provide data
 Pokedex.defaultProps = {
 	pokemon: [
 		{ id: 4, name: "Charmander", type: "fire", base_experience: 62 },
@@ -30,5 +31,6 @@ Pokedex.defaultProps = {
 		{ id: 133, name: "Eevee", type: "normal", base_experience: 65 },
 	],
 };
+*/
 
 export default Pokedex;
