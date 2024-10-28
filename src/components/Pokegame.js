@@ -1,6 +1,7 @@
 import React from "react";
 import Pokedex from "./Pokedex";
 import pokemonData from "../data/pokemonData";
+import { shuffle } from "../utils";
 
 const Pokegame = ({ pokemon = pokemonData }) => {
 	// Shuffle the pokemon and split into two hands
@@ -16,21 +17,5 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 		</div>
 	);
 };
-
-/** Fisher-Yates (Knuth) shuffle algorithm
- * Start from the last element
- * Select a random element
- * Swap elements to ensure every index has the same chance of being shuffled
- */
-function shuffle(array) {
-	const newArray = [...array];
-
-	for (let i = newArray.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-	}
-
-	return newArray;
-}
 
 export default Pokegame;
