@@ -1,5 +1,6 @@
 import React from "react";
 import Pokecard from "./Pokecard";
+import "../styles/Pokedex.css";
 
 const Pokedex = ({ pokemon }) => {
 	return (
