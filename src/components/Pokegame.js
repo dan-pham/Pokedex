@@ -18,23 +18,10 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 
 	return (
 		<div>
-			<h3>
-				Opponent's Hand
-				<span style={{ fontSize: "0.8em", marginLeft: "10px" }}>
-					(Total Exp: {experienceHand2})
-				</span>
-			</h3>
-			<Pokedex pokemon={hand2} />
-			<div style={{ fontSize: "1.2em", color: isWinner ? "green" : "red" }}>
-				{isWinner ? "You win!" : "You lose"}
-			</div>
-			<h3>
-				Your Hand
-				<span style={{ fontSize: "0.8em", marginLeft: "10px" }}>
-					(Total Exp: {experienceHand1})
-				</span>
-			</h3>
-			<Pokedex pokemon={hand1} />
+			<h3>Opponent's Hand</h3>
+			<Pokedex pokemon={hand2} totalExperience={experienceHand2} isWinner={!isWinner} />
+			<h3>Your Hand</h3>
+			<Pokedex pokemon={hand1} totalExperience={experienceHand1} isWinner={isWinner} />
 		</div>
 	);
 };
