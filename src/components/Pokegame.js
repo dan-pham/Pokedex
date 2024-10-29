@@ -43,7 +43,7 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 		};
 
 		flipCards();
-	}, []);
+	}, [revealedCards]);
 
 	return (
 		<div>
