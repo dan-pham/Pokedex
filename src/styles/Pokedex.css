@@ -13,3 +13,15 @@ h1 {
 	padding: 20px;
 	justify-items: center;
 }
+
+.winner {
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	height: 40px;
+}
+
+.winner.show {
+	opacity: 1;
+	transform: translateY(0);
+}

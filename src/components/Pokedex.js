@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Pokecard from "./Pokecard";
 import "../styles/Pokedex.css";
 
 const Pokedex = ({ pokemon, totalExperience, isWinner, revealedCards }) => {
+	const [showWinner, setShowWinner] = useState(false);
+
+	useEffect(() => {
+		if (revealedCards.every(Boolean)) {
+			const timer = setTimeout(() => {
+				setShowWinner(true); // Trigger the winning text to show after all cards are revealed
+			}, 500); // Delay to allow for card reveal animation
+
+			return () => clearTimeout(timer);
+		}
+	}, [revealedCards]);
+
 	return (
 		<div className="pokedex">
 			{pokemon.map((creature, index) => (
@@ -16,16 +28,17 @@ const Pokedex = ({ pokemon, totalExperience, isWinner, revealedCards }) => {
 				/>
 			))}
 
-			{revealedCards.every(Boolean) && (
-				<div style={{ fontSize: "0.8em", marginLeft: "10px" }}>
-					(Total Exp: {totalExperience}){" "}
-					{isWinner && (
-						<div style={{ fontSize: "1.2em", color: "green", marginTop: "10px" }}>
-							THIS HAND WINS!
-						</div>
-					)}
-				</div>
-			)}
+			<div
+				className={`winner ${showWinner ? "show" : ""}`}
+				style={{ fontSize: "0.8em", marginLeft: "10px" }}
+			>
+				(Total Exp: {totalExperience}){" "}
+				{isWinner && (
+					<div style={{ fontSize: "1.2em", color: "green", marginTop: "10px" }}>
+						THIS HAND WINS!
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };
