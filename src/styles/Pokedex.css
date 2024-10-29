@@ -1,0 +1,27 @@
+body {
+	font-family: "Press Start 2P", sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+.pokedex {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 20px;
+	padding: 20px;
+	justify-items: center;
+}
+
+.winner {
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	height: 40px;
+}
+
+.winner.show {
+	opacity: 1;
+	transform: translateY(0);
+}
