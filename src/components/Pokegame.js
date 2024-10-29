@@ -11,10 +11,6 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 	// Shuffle the pokemon and split into two hands
 	useEffect(() => {
 		const shuffledPokemon = shuffle(pokemon);
-		console.log(
-			"Initial shuffled Pokémon array:",
-			shuffledPokemon.map((creature) => creature.name)
-		);
 
 		setHand1(shuffledPokemon.slice(0, 4));
 		setHand2(shuffledPokemon.slice(4));
