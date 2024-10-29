@@ -3,13 +3,15 @@ import Pokecard from "./Pokecard";
 import "../styles/Pokedex.css";
 
 const Pokedex = ({ pokemon, totalExperience, isWinner, revealedCards }) => {
+	// Initialize winner boolean with state management
 	const [showWinner, setShowWinner] = useState(false);
 
+	// Trigger the winner message to show after all cards are revealed
 	useEffect(() => {
 		if (revealedCards.every(Boolean)) {
 			const timer = setTimeout(() => {
-				setShowWinner(true); // Trigger the winning text to show after all cards are revealed
-			}, 500); // Delay to allow for card reveal animation
+				setShowWinner(true);
+			}, 500); // Delay to allow for card reveal animation in ms
 
 			return () => clearTimeout(timer);
 		}

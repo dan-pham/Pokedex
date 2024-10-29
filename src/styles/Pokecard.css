@@ -37,14 +37,14 @@
 }
 
 .pokecard-back {
-	transform: rotateY(180deg);
+	transform: rotateY(180deg); /* Flip effect */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .pokecard:hover {
-	transform: scale(1.05);
+	transform: scale(1.05); /* Zoom effect */
 }
 
 .pokecard img {

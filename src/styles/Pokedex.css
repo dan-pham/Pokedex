@@ -7,7 +7,7 @@ h1 {
 }
 
 .pokedex {
-	display: grid;
+	display: grid; /* Show the pokedex as a grid */
 	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 	gap: 20px;
 	padding: 20px;
@@ -16,7 +16,7 @@ h1 {
 
 .winner {
 	opacity: 0;
-	transform: translateY(-10px);
+	transform: translateY(-10px); /* Animate the winner text to fade into the screen */
 	transition: opacity 0.5s ease, transform 0.5s ease;
 	height: 40px;
 }

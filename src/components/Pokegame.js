@@ -4,6 +4,7 @@ import pokemonData from "../data/pokemonData";
 import { shuffle } from "../utils";
 
 const Pokegame = ({ pokemon = pokemonData }) => {
+	// Initialize each hand with state management
 	const [hand1, setHand1] = useState([]);
 	const [hand2, setHand2] = useState([]);
 
@@ -19,12 +20,14 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 		setHand2(shuffledPokemon.slice(4));
 	}, [pokemon]); // Only run once when the component mounts
 
+	// Calculate the total experience of each hand
 	const sumTotalExperience = (hand) =>
 		hand.reduce((total, { base_experience }) => total + base_experience, 0);
 
 	const experienceHand1 = sumTotalExperience(hand1);
 	const experienceHand2 = sumTotalExperience(hand2);
 
+	// Determine the winner
 	const isWinner = experienceHand1 > experienceHand2;
 
 	// Handle card reveal animation
