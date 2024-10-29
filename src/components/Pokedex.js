@@ -2,27 +2,30 @@ import React from "react";
 import Pokecard from "./Pokecard";
 import "../styles/Pokedex.css";
 
-const Pokedex = ({ pokemon, totalExperience, isWinner }) => {
+const Pokedex = ({ pokemon, totalExperience, isWinner, revealedCards }) => {
 	return (
 		<div className="pokedex">
-			{pokemon.map((creature) => (
+			{pokemon.map((creature, index) => (
 				<Pokecard
 					key={creature.id}
 					id={creature.id}
 					name={creature.name}
 					type={creature.type}
 					baseExperience={creature.base_experience}
+					isRevealed={revealedCards[index]} // Pass the reveal state for each card
 				/>
 			))}
 
-			<div style={{ fontSize: "0.8em", marginLeft: "10px" }}>
-				(Total Exp: {totalExperience}){" "}
-				{isWinner && (
-					<div style={{ fontSize: "1.2em", color: "green", marginTop: "10px" }}>
-						THIS HAND WINS!
-					</div>
-				)}
-			</div>
+			{revealedCards.every(Boolean) && (
+				<div style={{ fontSize: "0.8em", marginLeft: "10px" }}>
+					(Total Exp: {totalExperience}){" "}
+					{isWinner && (
+						<div style={{ fontSize: "1.2em", color: "green", marginTop: "10px" }}>
+							THIS HAND WINS!
+						</div>
+					)}
+				</div>
+			)}
 		</div>
 	);
 };
