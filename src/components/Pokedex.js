@@ -30,20 +30,27 @@ const Pokedex = ({ pokemon, totalExperience, isWinner, revealedCards }) => {
 				/>
 			))}
 
-			<div
-				className={`winner ${showWinner ? "show" : ""}`}
-				style={{ fontSize: "0.8em", marginLeft: "10px" }}
-			>
-				(Total Exp: {totalExperience}){" "}
-				{isWinner && (
-					<div style={{ fontSize: "1.2em", color: "green", marginTop: "10px" }}>
-						THIS HAND WINS!
-					</div>
-				)}
-			</div>
+			<WinnerMessage
+				showWinner={showWinner}
+				totalExperience={totalExperience}
+				isWinner={isWinner}
+			/>
 		</div>
 	);
 };
+
+/* Only show after all the cards are revealed and the winner is determined */
+const WinnerMessage = ({ showWinner, totalExperience, isWinner }) => (
+	<div
+		className={`winner ${showWinner ? "show" : ""}`}
+		style={{ fontSize: "0.8em", marginLeft: "10px" }}
+	>
+		(Total Exp: {totalExperience}){" "}
+		{isWinner && (
+			<div style={{ fontSize: "1.2em", color: "green", marginTop: "10px" }}>THIS HAND WINS!</div>
+		)}
+	</div>
+);
 
 /* Requirement for the first stage in the Pokedex project, using Pokedex.defaultProps to provide data
 Pokedex.defaultProps = {
