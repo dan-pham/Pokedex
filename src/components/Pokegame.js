@@ -43,7 +43,8 @@ const Pokegame = ({ pokemon = pokemonData }) => {
 		};
 
 		flipCards();
-	}, [revealedCards]);
+		// eslint-disable-next-line
+	}, []); // Only render on mount
 
 	return (
 		<div>
